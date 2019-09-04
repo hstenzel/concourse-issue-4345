@@ -2,7 +2,7 @@ resources:
 - name: src
   type: git
   source:
-    uri: git@github.com:hstenzel/concourse-issue-4345.git
+    uri: https://github.com/hstenzel/concourse-issue-4345.git
     branch: master
 
 jobs:
