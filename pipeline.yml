@@ -1,0 +1,21 @@
+resources:
+- name: src
+  type: git
+  source:
+    uri: git@github.com:hstenzel/concourse-issue-4345.git
+    branch: master
+
+jobs:
+- name: hello-world
+  plan:
+  - get: src
+  - task: say-hello
+    file: src/task.yml
+    input_mapping:
+      src: src
+    vars:
+      meta:
+        image_resource:
+          type: docker-image
+          source:
+            repository: busybox
